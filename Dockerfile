@@ -13,13 +13,15 @@ WORKDIR /app
 RUN mkdir model/
 RUN mkdir datasets/
 
-COPY ["Pipfile", "Pipfile.lock", "*.py", "datasets/*", "./"] /app/
+COPY ["Pipfile", "Pipfile.lock", "*.py", "./"] /app/
+COPY ["datasets/Employee.csv", "./datasets/"] /app/
 
 RUN pipenv install --system --deploy
 
 CMD [ "pipenv","shell" ]  
 RUN python train.py
 
-ENTRYPOINT ["gunicorn", "--bind=0.0.0.0", "predict:app"]
+EXPOSE 9696
+ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
 
 # ENTRYPOINT ["pipenv", "run", "gunicorn", "app:app"]

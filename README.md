@@ -107,5 +107,5 @@ Build docker image
 Run docker image
 
 ```bash
-  docker run -it --rm --entrypoint=bash mid-term
+  docker run -it --rm -p 80:9696 mid-term
 ```
