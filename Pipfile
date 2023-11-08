@@ -13,6 +13,7 @@ seaborn = "*"
 xgboost = "*"
 pickle5 = "*"
 flask = "*"
+gunicorn = "*"
 
 [dev-packages]
 ipykernel = "*"

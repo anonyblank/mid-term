@@ -34,7 +34,7 @@ _Leave or Not:_ a target column
 
 This dataset can be used for various HR and workforce-related analyses, including employee retention, salary structure assessments, diversity and inclusion studies, and leave pattern analyses. Researchers, data analysts, and HR professionals can gain valuable insights from this dataset.
 
-## Instructions
+## Deploy in local machine
 
 Clone the project
 
@@ -45,7 +45,13 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd mid-term
+  cd mid-term/
+```
+
+Create Directory
+
+```bash
+  mkdir model/
 ```
 
 Install dependencies
@@ -60,14 +66,46 @@ Activate environment
   pipenv shell
 ```
 
-Create Directory
+Run `train.py`
 
 ```bash
-  mkdir model
+  python train.py
 ```
 
-Start the server
+Run `predict.py`
 
 ```bash
-  pipenv run
+  python predict.py
+```
+
+Run `request.py`
+
+```bash
+  python request.py
+```
+
+## Deploy with Docker
+
+Clone the project
+
+```bash
+  git clone https://github.com/anonyblank/mid-term.git
+```
+
+Go to the project directory
+
+```bash
+  cd mid-term/
+```
+
+Build docker image
+
+```bash
+  docker build -t mid-term .
+```
+
+Run docker image
+
+```bash
+  docker run -it --rm --entrypoint=bash mid-term
 ```
