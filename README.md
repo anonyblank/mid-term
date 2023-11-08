@@ -109,3 +109,5 @@ Run docker image
 ```bash
   docker run -it --rm -p 80:9696 mid-term
 ```
+
+## Deploy with Cloud
